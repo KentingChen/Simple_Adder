@@ -25,15 +25,19 @@ button {
 
 </style>
 
-<h1 id="AllTotal">0</h1>
+<h1 id="AllTotal">$ 0</h1>
 
 <div style="background-color:#ffb3b3">
 <p> lunch box ($65)</p>
 <h2 id="itemA">x0 = $0</h2>
 <br>
-<button onclick="addit('itemA',1)" id ="Aadd1">+1</button>
-<button onclick="addit('itemA',5)" id ="Aadd5">+5</button>
-<button onclick="addit('itemA',10)" id ="Aadd10">+10</button>
+<button onclick="addit('itemA',1)" id ="Aadd1" style="width:35%">+1</button>
+<button onclick="addit('itemA',5)" id ="Aadd5" style="width:20%">+5</button>
+<button onclick="addit('itemA',10)" id ="Aadd10" style="width:15%">+10</button>
+<br>
+<button onclick="addit('itemA',-1)" id ="Aneg1" style="width:35%">-1</button>
+<button onclick="addit('itemA',-5)" id ="Aneg5" style="width:20%">-5</button>
+<button onclick="addit('itemA',-10)" id ="Aneg10" style="width:15%">-10</button>
 </div>
 <br>
 
@@ -41,9 +45,13 @@ button {
 <p> bone box ($75)</p>
 <h2 id="itemB">x0 = $0</h2>
 <br>
-<button onclick="addit('itemB',1)" id ="Badd1">+1</button>
-<button onclick="addit('itemB',5)" id ="Badd5">+5</button>
-<button onclick="addit('itemB',10)" id ="Badd10">+10</button>
+<button onclick="addit('itemB',1)" id ="Badd1" style="width:35%">+1</button>
+<button onclick="addit('itemB',5)" id ="Badd5" style="width:20%">+5</button>
+<button onclick="addit('itemB',10)" id ="Badd10" style="width:15%">+10</button>
+<br>
+<button onclick="addit('itemB',1)" id ="Bneg1" style="width:35%">-1</button>
+<button onclick="addit('itemB',-5)" id ="Bneg5" style="width:20%">-5</button>
+<button onclick="addit('itemB',-10)" id ="Bneg10" style="width:15%">-10</button>
 </div>
 <br>
 
@@ -51,8 +59,11 @@ button {
 <p> $10 items ($10)</p>
 <h2 id="itemC">x0 = $0</h2>
 <br>
-<button onclick="addit('itemC',1)" id ="Cadd1">+1</button>
-<button onclick="addit('itemC',5)" id ="Cadd5">+5</button>
+<button onclick="addit('itemC',1)" id ="Cadd1" style="width:35%">+1</button>
+<button onclick="addit('itemC',5)" id ="Cadd5" style="width:20%">+5</button>
+<br>
+<button onclick="addit('itemC',-1)" id ="Cneg1" style="width:35%">-1</button>
+<button onclick="addit('itemC',-5)" id ="Cneg5" style="width:20%">-5</button>
 </div>
 <br>
 
@@ -68,7 +79,7 @@ var price_C = 10;
 
 function refresh(){
 	ttotal = total_A*price_A + total_B*price_B + total_C*price_C;
-	document.getElementById("AllTotal").innerHTML = ttotal;
+	document.getElementById("AllTotal").innerHTML = "$ "+ttotal;
 }
 function addit(item,counter) {
 	count = 0;
