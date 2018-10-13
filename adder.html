@@ -95,18 +95,27 @@ function addit(item,counter) {
 	price = 0;
 	if (item == "itemA") {
 		total_A = total_A + counter;
+        if (total_A < 0) {     	
+        	total_A = 0;
+        }
 		price = (price_A* total_A);
 		count = total_A;
 		document.getElementById(item).innerHTML = "x" + count + " = $ " + price;
 	}
 	else if (item == "itemB") {
 		total_B = total_B + counter;
+        if (total_B < 0) {     	
+        	total_B = 0;
+        }
 		price = price_B* total_B;
 		count = total_B;
         document.getElementById(item).innerHTML = "x" + count + " = $ " + price;
 	}
 	else if (item == "itemC") {
 		total_C = total_C + counter;
+        if (total_C < 0) {     	
+        	total_C = 0;
+        }
 		price = price_C*total_C;
 		count = total_C;
         document.getElementById(item).innerHTML = "x" + count + " = $ " + price;
