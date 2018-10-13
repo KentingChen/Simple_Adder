@@ -19,47 +19,80 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    height:30px;
-    width:30px;
+    height:50px;
+    width:100px;
 }
 
 </style>
 
-<p> lunch box</p>
-<button onclick="add1" id ="add1">+1</button>
-<button onclick="add5" id ="add5">+5</button>
-<button onclick="add10" id ="add10">+10</button>
-<button onclick="add50" id ="add50">+50</button>
+<h1 id="AllTotal">0</h1>
+
+<div style="background-color:#ffb3b3">
+<p> lunch box ($65)</p>
+<h2 id="itemA">x0 = $0</h2>
 <br>
-<p> bone box</p>
-<button onclick="add1" id ="add1">+1</button>
-<button onclick="add5" id ="add5">+5</button>
-<button onclick="add10" id ="add10">+10</button>
-<button onclick="add50" id ="add50">+50</button>
-<br>
-<p> $10 items</p>
-<button onclick="add1" id ="add1">+1</button>
-<button onclick="add5" id ="add5">+5</button>
-<button onclick="add10" id ="add10">+10</button>
+<button onclick="addit('itemA',1)" id ="Aadd1">+1</button>
+<button onclick="addit('itemA',5)" id ="Aadd5">+5</button>
+<button onclick="addit('itemA',10)" id ="Aadd10">+10</button>
+</div>
 <br>
 
+<div style="background-color:#ffdd99">
+<p> bone box ($75)</p>
+<h2 id="itemB">x0 = $0</h2>
+<br>
+<button onclick="addit('itemB',1)" id ="Badd1">+1</button>
+<button onclick="addit('itemB',5)" id ="Badd5">+5</button>
+<button onclick="addit('itemB',10)" id ="Badd10">+10</button>
+</div>
+<br>
+
+<div style="background-color:#ffff99">
+<p> $10 items ($10)</p>
+<h2 id="itemC">x0 = $0</h2>
+<br>
+<button onclick="addit('itemC',1)" id ="Cadd1">+1</button>
+<button onclick="addit('itemC',5)" id ="Cadd5">+5</button>
+</div>
+<br>
 
 <script>
-function add1(counter) {
-	return counter+1
-}
-function add5(counter) {
-	return counter+5
-}
-function add10(counter) {
-	return counter+10
-}
-function add50(counter) {
-	return counter+50
-}
+var ttotal = 0;
+var total_A = 0;
+var total_B = 0;
+var total_C = 0;
+var price_A = 65;
+var price_B = 75;
+var price_C = 10;
 
 
-
+function refresh(){
+	ttotal = total_A*price_A + total_B*price_B + total_C*price_C;
+	document.getElementById("AllTotal").innerHTML = ttotal;
+}
+function addit(item,counter) {
+	count = 0;
+	price = 0;
+	if (item == "itemA") {
+		total_A = total_A + counter;
+		price = (price_A* total_A);
+		count = total_A;
+		document.getElementById(item).innerHTML = "x" + count + " = $ " + price;
+	}
+	else if (item == "itemB") {
+		total_B = total_B + counter;
+		price = price_B* total_B;
+		count = total_B;
+        document.getElementById(item).innerHTML = "x" + count + " = $ " + price;
+	}
+	else if (item == "itemC") {
+		total_C = total_C + counter;
+		price = price_C*total_C;
+		count = total_C;
+        document.getElementById(item).innerHTML = "x" + count + " = $ " + price;
+	}
+    refresh();
+}
 
 
 </script>
