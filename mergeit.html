@@ -25,13 +25,15 @@ h2{
 }
 button {
     background-color: #f3f3f3;
-    border-width: 2px ;
+    border-width: 3px ;
     color: black;
-    padding: 9px 18px;
+    padding: 12px 24px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 18px;
+    height:20px;
+    width:20px;
 }
 button:hover {
     background-color: #fcc5a0;
@@ -59,7 +61,7 @@ button:hover {
 <button onclick="merge([0,2])" id ="02"></button>
 <button onclick="merge([0,3])" id ="03"></button>
 <button onclick="merge([0,4])" id ="04"></button>
-<button onclick="merge([0,5])" id ="05"></button>     ---- <button onclick="startGame()">Shuffle</button>
+<button onclick="merge([0,5])" id ="05"></button> 
 <br>
 <button onclick="merge([1,0])" id ="10"></button>
 <button onclick="merge([1,1])" id ="11"></button>
@@ -95,7 +97,9 @@ button:hover {
 <button onclick="merge([5,3])" id ="53"></button>
 <button onclick="merge([5,4])" id ="54"></button>
 <button onclick="merge([5,5])" id ="55"></button>
-
+<br>
+---- <button onclick="startGame()">Shuffle</button>
+<br>
 <script>
 var current_pos = [];
 var pos = [];
